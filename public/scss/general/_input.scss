@@ -1,0 +1,58 @@
+//._animateInputBox {
+//  position: relative;
+//  margin-bottom: 15px;
+//}
+//
+//input {
+//  &._animate {
+//    display: block;
+//    width: 100%;
+//    padding: 5px 10px 5px 0;
+//    border: none;
+//    color: #666682;
+//    border-bottom: 1px solid #c8c8d3;
+//    box-shadow: 0 1px 0 0 transparent;
+//    transition: all .2s ease-in-out;
+//    @include rem('font-size', 14px);
+//
+//    &:focus,
+//    &:hover,
+//    &:active {
+//      outline: none;
+//    }
+//
+//    &:focus {
+//      border-bottom-color: #75b65e;
+//      box-shadow: 0 1px 0 0 #75b65e;
+//
+//      + label {
+//        color: #75b65e;
+//        transform: translateY(-12px) scale(.9);
+//      }
+//    }
+//
+//    &:valid {
+//      + label {
+//        color: #75b65e;
+//        transform: translateY(-12px) scale(.9);
+//      }
+//    }
+//
+//    &:-webkit-autofill{
+//      + label {
+//        color: #75b65e;
+//        transform: translateY(-12px) scale(.9);
+//      }
+//    }
+//  }
+//}
+//
+//label._animate {
+//  position: absolute;
+//  top: 2px;
+//  left: 0;
+//  color: #999;
+//  pointer-events: none;
+//  transition: all 0.2s ease-in-out;
+//  @include rem('font-size', 12px);
+//}

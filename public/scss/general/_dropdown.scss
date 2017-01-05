@@ -1,0 +1,113 @@
+.dd {
+  $height: 38px;
+  $stroke-width: 2px;
+
+  &-wrap {
+    position: relative;
+    height: ($height + $stroke-width);
+    display: inline-block;
+    padding: 0 $height  0 ($height / 3) ;
+    line-height: $height;
+    border-bottom: $stroke-width solid #868788;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    &.is-open {
+      .dd_arrow-wrap {
+        span {
+          &:nth-child(1) {
+            transform: rotate(-45deg);
+          }
+          &:nth-child(2) {
+            transform: rotate(45deg);
+          }
+        }
+      }
+
+      .dd-list {
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+      }
+    }
+
+  }
+
+  &_arrow-wrap {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: $height;
+    width: 30px;
+
+    span {
+      position: absolute;
+      top: 18px;
+      width: 16px;
+      height: $stroke-width;
+      background-color: #868788;
+      border-radius: $stroke-width;
+      transition: transform .2s ease;
+
+      &:nth-child(1) {
+        left: 2px;
+        transform: rotate(45deg);
+      }
+      &:nth-child(2) {
+        right: 2px;
+        transform: rotate(-45deg);
+      }
+    }
+  }
+
+  &_name {
+    color: #868788;
+    @include rem('font-size', 14px);
+  }
+
+  &-list {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(30px);
+
+    position: absolute;
+    top: calc(100% + 2px);
+    left: 0;
+    z-index: 3;
+    min-width: 100%;
+    padding: 0;
+    margin: 0;
+    background: linear-gradient(to right, #393e41, #303233);
+    color: #868788;
+    line-height: $height;
+    list-style-type: none;
+    white-space: nowrap;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19),
+    0 6px 6px rgba(0, 0, 0, 0.23);
+    transition: all .2s ease-in-out;
+  }
+
+  &-item {
+    padding: 0 ($height / 3);
+    background: linear-gradient(to right, #34393d, #2c2e30);
+    cursor: pointer;
+
+    + .dd-item {
+      margin-top: 2px;
+    }
+
+    &:hover {
+      background: linear-gradient(to right, #3a3f41, #323435);
+    }
+  }
+}
+
+.main-header {
+  .dd-wrap {
+    float: right;
+    margin-right: 20px;
+  }
+}
